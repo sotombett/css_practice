@@ -1,0 +1,183 @@
+
+
+/* CSS переменные */
+:root {
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --color-text: #2c3e50;
+  --color-heading: #123c69;
+  --color-accent: #1f6feb;
+  --header-bg: #eef4ff;
+  --header-hover: #dbe9ff;
+  --card-border: #b8c7e0;
+  --hover-bg: #fff3b0;
+  --odd-row: #f3f7ff;
+  --radius: 8px;
+}
+
+/* базовые селекторы */
+body {
+  font-family: var(--font-main);
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: #fafafa;
+}
+
+h1 {
+  color: var(--color-heading);
+}
+
+.main-header {
+  background-color: var(--header-bg);
+  padding: 24px;
+  border-bottom: 3px dashed var(--color-accent);
+}
+
+.subtitle {
+  font-style: italic;
+  color: #5a6b7b;
+}
+
+#site-title {
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* комбинированные селекторы */
+.content > article {
+  background-color: #fff;
+  padding: 20px;
+  margin: 14px 0;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.post p {
+  margin-bottom: 12px;
+}
+
+h2 + p {
+  font-weight: 600;
+  font-size: 1.15rem;
+}
+
+.card {
+  border: 2px solid var(--card-border);
+  padding: 18px;
+  border-radius: var(--radius);
+  background: #fff;
+  color: #2e7d32; /* для currentColor */
+}
+
+/* каскад */
+p {
+  color: #111;
+  font-size: 16px;
+}
+
+.post p {
+  color: #1b5e20;
+}
+
+.featured-post p {
+  color: #8b0000;
+}
+
+.featured-post .intro {
+  color: #6a1b9a;
+  font-size: 19px;
+}
+
+/* специфичность */
+.important {
+  color: #c62828;
+  font-weight: 700;
+}
+
+li.important {
+  color: #7f1d1d;
+  text-decoration: underline wavy;
+}
+
+ul li {
+  color: #1565c0;
+}
+
+.important {
+  color: #ef6c00 !important;
+}
+
+/* наследование */
+.card {
+  border: 2px solid var(--color-accent);
+  padding: inherit;
+}
+
+.examples {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+/* псевдоклассы */
+li:hover {
+  background-color: var(--hover-bg);
+  cursor: pointer;
+}
+
+li:nth-child(odd) {
+  background-color: var(--odd-row);
+}
+
+.main-header:hover {
+  background-color: var(--header-hover);
+  transition: background-color 0.4s ease;
+}
+
+/* псевдоэлементы */
+p:first-line {
+  font-weight: 700;
+  color: #0d47a1;
+}
+
+.post h2::after {
+  content: " ✦";
+  color: #ffb300;
+}
+
+.card::before {
+  content: "➜ ";
+  color: currentColor;
+}
+
+/* анимация и адаптивность */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content > article,
+.card {
+  animation: fadeInUp 0.6s ease both;
+}
+
+@media (max-width: 700px) {
+  .main-header {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .content > article {
+    margin: 10px 0;
+    padding: 14px;
+  }
+
+  .examples {
+    font-size: 14px;
+  }
+}
