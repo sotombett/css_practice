@@ -43,9 +43,9 @@
 
 Они создают виртуальные элементы до и после содержимого реального тега, не добавляя разметку в HTML. Содержимое задаётся через свойство `content`:
 
-```css
-.icon::before { content: "★"; }
-.card::after  { content: ""; display: block; clear: both; }
+- ```css
+- .icon::before { content: "★"; }
+- .card::after  { content: ""; display: block; clear: both; }
 
 9. В каком порядке браузер применяет CSS-правила при одинаковой специфичности селекторов?
 
